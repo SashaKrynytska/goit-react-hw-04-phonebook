@@ -16,11 +16,6 @@ export const App = () => {
     localStorage.setItem('contactsData', JSON.stringify(contacts));
   }, [contacts]);
 
-  useEffect(() => {
-    console.log('Обновилось поле Contacts, записываю contacts в хранилище');
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
-
   const addContact = ({ name, number }) => {
     if (contacts.some(e => e.name === name)) {
       alert(`${name} is already in contacts!`);
